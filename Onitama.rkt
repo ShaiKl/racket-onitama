@@ -7,7 +7,7 @@
 
 ;CONSTANTS
 (define red-ai? #t) ;Determins if red is ai or player controlled
-(define blue-ai? #t) ;Determins if blue is ai or player controlled
+(define blue-ai? #f) ;Determins if blue is ai or player controlled
 (define ai-depth 3) ;Determins the depth of the minimax algorithm
 (define alpha-beta #t) ;Determins if the algorithm used is minimax with or without pruning
 
