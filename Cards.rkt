@@ -1,0 +1,40 @@
+(define-struct card (name moves pic))
+
+;Moves
+;N - North, S - South, W - West, E - East
+(define N  (make-posn  0  1))
+(define NE (make-posn  1  1))
+(define NEE (make-posn  2  1))
+(define NW (make-posn -1  1))
+(define NWW (make-posn -2  1))
+(define E  (make-posn  1  0))
+(define W  (make-posn -1  0))
+(define S  (make-posn  0 -1))
+(define SW (make-posn -1 -1))
+(define SE (make-posn  1 -1))
+(define NN (make-posn  0  2))
+(define EE (make-posn  2  0))
+(define WW (make-posn -2  0))
+
+;card constants
+(define monkey (make-card "Monkey" (list SE SW NW NE) "Animals/monkey.png"))
+(define boar (make-card "Boar" (list W E N) "Animals/boar.png"))
+(define elephant (make-card "Elephant" (list W E NE NW) "Animals/elephant.png"))
+(define crab (make-card "Crab" (list EE WW N) "Animals/crab.png"))
+(define tiger (make-card "Tiger" (list NN S) "Animals/tiger.png"))
+(define goose (make-card "Goose" (list NW W E SE) "Animals/goose.png"))
+(define dragon (make-card "Dragon" (list SW SE NWW NEE) "Animals/dragon.png"))
+(define frog (make-card "Frog" (list WW NW SE) "Animals/frog.png"))
+(define rabbit (make-card "Rabbit" (list SW NE EE) "Animals/rabbit.png"))
+(define rooster (make-card "Rooster" (list W SW E NE) "Animals/rooster.png"))
+(define mantis (make-card "Mantis" (list NE NW S) "Animals/mantis.png"))
+(define horse (make-card "Horse" (list W N S) "Animals/horse.png"))
+(define ox (make-card "Ox" (list E N S) "Animals/ox.png"))
+(define crane (make-card "Crane" (list N SW SE) "Animals/crane.png"))
+(define eel (make-card "Eel" (list NW SW E) "Animals/eel.png"))
+(define cobra (make-card "Cobra" (list SE NE W) "Animals/cobra.png"))
+
+(define basic-set (list tiger crab horse eel frog))
+
+(define (gen-cards)
+  (shuffle basic-set))
